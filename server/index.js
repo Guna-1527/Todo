@@ -28,6 +28,7 @@ mongoose
 app.get("/", async (req, res) => {
     const Data = await Task.find();
     res.send(Data);
+    res.json("hell");
 });
 
 app.post("/add-task", async (req, res) => {
