@@ -1,0 +1,21 @@
+.tab {
+    width: 1000px;
+    height: 85vh;
+    position: relative;
+    border-radius: 20px;
+    padding: 10px;
+    border: 20px solid rgb(17, 17, 17);
+    background-color: #d8b7f5;
+}
+.Header {
+    font-size: 1.6rem;
+    font-weight: 800;
+    text-align: center;
+}
+.Wrapper {
+	height: 70vh;
+	overflow-y: scroll;
+}
+.Wrapper::-webkit-scrollbar {
+	display: none;
+}
