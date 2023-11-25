@@ -9,7 +9,7 @@ const InputArea = () => {
 
 
   const AddTask = () => {
-    axios.post("https://todo-server-eight-liard.vercel.app//add-task", {
+    axios.post("todo-server-eight-liard.vercel.app/add-task", {
       task: Input
     }).then(() => {
       SetInput("")
