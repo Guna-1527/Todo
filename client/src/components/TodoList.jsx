@@ -7,7 +7,7 @@ const TodoList = ({task, id}) => {
     
 
     const HandleDelete = () => {
-        axios.delete(`http://localhost:8080/delete/${id}`)
+        axios.delete(`https://todo-server-eight-liard.vercel.app/${id}`)
         .then(() => {
             window.location.reload();
         })

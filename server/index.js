@@ -6,7 +6,13 @@ require("dotenv").config();
 const app = express();
 app.use(express.json());
 
-app.use(cors());
+app.use(cors(
+    {
+        origin: ["todo-cli-gunas-projects-65696d9d.vercel.app"],
+        methods: ["GET", "POST", "PUT", "DELETE"],
+        credentials: true
+    }
+));
 
 mongoose
     .connect(process.env.MONGODB)
@@ -20,6 +26,7 @@ mongoose
 app.get("/", async (req, res) => {
     const Data = await Task.find();
     res.send(Data);
+    res.json("hell");
 });
 
 app.post("/add-task", async (req, res) => {
