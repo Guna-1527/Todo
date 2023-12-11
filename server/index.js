@@ -6,13 +6,7 @@ require("dotenv").config();
 const app = express();
 app.use(express.json());
 
-app.use(cors(
-    {
-        origin: ["todo-cli-gunas-projects-65696d9d.vercel.app"],
-        methods: ["GET", "POST", "PUT", "DELETE"],
-        credentials: true
-    }
-));
+app.use(cors());
 
 mongoose
     .connect(process.env.MONGODB)
