@@ -2,16 +2,14 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const Task = require("./models/Task");
-
+require("dotenv").config();
 const app = express();
 app.use(express.json());
 
 app.use(cors());
 
 mongoose
-    .connect(
-        "mongodb+srv://gunaprasanth1527:rootguna@cluster0.it6lymu.mongodb.net/"
-    )
+    .connect(process.env.MONGODB)
     .then(() => {
         console.log("connection established");
     })
@@ -48,6 +46,6 @@ app.delete("/delete/:id", async (req, res) => {
     res.send({ success: true, message: "delete success", data: data });
 });
 
-app.listen(8080, () => {
+app.listen(process.env.PORT, () => {
     console.log("listening on port 8080");
 });
